@@ -16,6 +16,7 @@
 
 		<link rel="stylesheet" href="css/reveal.min.css">
 		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+		<link rel="stylesheet" href="css/slides.css">
 
 		<!-- For syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -73,12 +74,36 @@
 				</section>
 
 				<section>
-					<h2>BDD specs</h2>
-					<ul>
-						<li>given-when-then</li>
-						<li>expect</li>
-						<li>should</li>
-					</ul>
+						<h2>BDD specs</h2>
+						<ul>
+							<li>given-when-then</li>
+							<li>expect</li>
+							<li>should</li>
+						</ul>
+				</section>
+
+				<section>
+					<h2>given-when-then</h2>
+					<pre><font class="bold blue">Story</font>: Returns go to stock
+<font class="bold blue">In order to</font> keep track of stock
+<font class="bold blue">As a</font> store owner
+<font class="bold blue" >I want to</font> add items back to stock when they're returned
+
+<font class="bold blue">Scenario 1:</font> Refunded items should be returned to stock
+<font class="bold orange">Given</font> a customer previously bought a black sweater from me
+<font class="bold orange">And</font> I currently have three black sweaters left in stock
+<font class="bold yellow">When</font> he returns the sweater for a refund
+<font class="bold green">Then</font> I should have four black sweaters in stock</pre>
+				</section>
+
+				<section>
+					<h2>expect</h2>
+					<pre><code>expect(foo).to.not.equal(<span class="string">'bar'</span>);
+expect(goodFn).to.not.<span class="keyword">throw</span>(Error);
+
+expect({ foo: <span class="string">'baz'</span> })
+	.to.have.property(<span class="string">'foo'</span>)
+  	.and.not.equal(<span class="string">'bar'</span>);</code></pre>
 				</section>
 
 				<section>
@@ -113,7 +138,27 @@
 				</section>
 
 				<section>
-					<h2>Jasmine</h2>
+					<section>
+						<h2>Jasmine</h2>
+						
+					</section>
+					<section>
+						<p>What is it?..</p>
+						<img src="./img/pr.png"/>
+					</section>
+					<section>
+						<p>This?..</p>
+						<img src="./img/flower.png"/>
+					</section>
+					<section>
+						<h2>No! This</h2>
+						<pre><code>describe("Jasmine", function() {
+  it("makes testing JavaScript awesome!", function() {
+    expect (yourCode).toBeLotsBetter();
+  });
+});
+</code></pre>
+					</section>
 				</section>
 
 				<section>
@@ -123,6 +168,7 @@
 
 				<section>
 					<h2>jsTestDriver</h2>
+					<p> <font class="blue">java -jar</font> <font class="orange">JsTestDriver.jar</font> <font class="green">--port 9876</font></p>
 				</section>
 
 				<section>
