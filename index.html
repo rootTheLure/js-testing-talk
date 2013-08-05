@@ -49,28 +49,79 @@
 				</section>
 
 				<section>
-					<h1>¡Porque!</h1>
-					<ul>
-						<li>refactoring</li>
-						<li>organization</li>
-						<li>documentation</li>
-						<li>defect prevention</li>
-						<li>collaboration</li>
-					</ul>
+
+					<section>
+						<h1>¡Porque!</h1>
+						<ul>
+							<li>refactoring</li>
+							<li>organization, modularization, extensibility</li>
+							<li>documentation</li>
+							<li>defect prevention</li>
+							<li>collaboration</li>
+						</ul>
+					</section>
+					<section>
+						<p>"Any feature without a test doesn’t exist"</p>
+						<div style="text-align:right; font-size:20px">Steve Loughran
+						HP Laboratories</div>
+					</section>
 				</section>
 
 				<section>
-					<h2>TDD &amp; BDD</h2>
-					<ul>
-						<li>tests first</li>
-						<li>red-refactor-green</li>
-						<li>structured</li>
-						<li>automation</li>
-					</ul>
+					<section>
+						<h2>TDD &amp; BDD</h2>
+						<ul>
+							<li>tests first</li>
+							<li>red/green/refactor</li>
+							<li>structured</li>
+							<li>automation</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Tests first</h2>
+						<img src="img/dont-wanna.jpg" alt="">
+					</section>
+
+					<section>
+						<h2>red/green/refactor</h2>
+						<p>Red: Write a failing test</p>
+						<img src="img/beer-red.jpg" alt="">
+					</section>
+
+					<section>
+						<h2>red/green/refactor</h2>
+						<p>Green: Make it pass</p>
+						<img src="img/beer-green.jpg" alt="">
+					</section>
+
+					<section>
+						<h2>red/green/refactor</h2>
+						<p>Refactor: Eliminate redundancy</p>
+						<img src="img/beer.jpeg" alt="">
+					</section>
+
+					<section>
+						<h2>Structure</h2>
+						<ul style="font-size: 26px">
+							<li>Setup: Put the Unit Under Test (UUT) or the overall test system in the state needed to run the test.</li>
+							<li>Execution: Trigger/drive the UUT to perform the target behavior and capture all output, such as return values and output parameters. </li>
+							<li>Validation: Ensure the results of the test are correct.</li>
+							<li>Cleanup: Restore the UUT or the overall test system to the pre-test state.</li>
+						</ul>
+						<a style="font-size:20px">http://en.wikipedia.org/wiki/Test-driven_development#Test_structure</a>
+					</section>
+
 				</section>
 
 				<section>
-					<h2>TDD assertions</h2> 
+					<h2>TDD assertions</h2>
+					<ul>
+						<li><a href="https://npmjs.org/package/assert">assert</a></li>
+						<li><a href="https://npmjs.org/package/assert-plus">assert-plus</a></li>
+						<li><a href="https://npmjs.org/package/better-assert">better-assert</a></li>
+						<li><a href="http://chaijs.com/api/assert/">Chai.js Asserts</a></li>
+					</ul>
 				</section>
 
 				<section>
@@ -107,13 +158,43 @@ expect({ foo: <span class="string">'baz'</span> })
 				</section>
 
 				<section>
-					<h2>Functional</h2>
-					<ul>
-						<li>UX/behavior verification</li>
-						<li>automation &amp; control</li>
-						<li>metrics &amp; profiling</li>
-						<li>helps testers</li>
-					</ul>
+					<section>
+						<h2>Functional</h2>
+						<ul>
+							<li>UX/behavior verification</li>
+							<li>automation &amp; control</li>
+							<li>metrics &amp; profiling</li>
+							<li>helps QA testers</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>UX/behavior verification</h2>
+						<p>Unit tests just prove that your code doesn't work</p>
+					</section>
+
+					<section>
+						<h2>Automation &amp; Control</h2>
+						<img src="img/user-friendly_dog.jpg" alt="">
+						<div style="font-size:60px">&darr;</div>
+						<img src="img/text-x-javascript-icon.png" width="15%" alt="">
+					</section>
+
+					<section>
+						<h2>Metrics &amp; Profiling</h2>
+						<ul>
+							<li>Execution time</li>
+							<li>Loading, rendering, painting</li>
+							<li>CPU &amp; Memory</li>
+							<li>Google Chrome Metrics</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Helps QA testers</h2>
+						<p>Why not let QA guys concentrate on quality rather than routine?</p>
+						<img src="img/QA-Developer.jpg" alt="">
+					</section>
 				</section>
 
 				<section>
@@ -129,18 +210,123 @@ expect({ foo: <span class="string">'baz'</span> })
 				</section>
 
 				<section>
-					<h2>Mocha</h2>
+					<h2>Techniques</h2>
+					<ul>
+						<li>Dummies</li>
+						<li>Stubs</li>
+						<li>Mocks</li>
+						<li>Spies</li>
+						<li>Fixtures</li>
+					</ul>
 				</section>
 
 				<section>
-					<h2>Chai</h2>
-					<p>plugins</p>
+					<section><h2>Mocha</h2><p>['mɔkə]</p></section>
+					<section>
+						<h2>Mocha</h2>
+						<ul>
+							<li>Supports TDD assertions and BDD should/expect</li>
+							<li>Reporting &amp; CI integration</li>
+							<li>JavaScript API</li>
+							<li>Browser Test Runner</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Mocha</h2>
+						<pre><code class="javascript">describe('Array', function(){
+  describe('#indexOf()', function(){
+    it('should return -1 when the value is not present', function(){
+      [1,2,3].indexOf(5).should.equal(-1);
+      [1,2,3].indexOf(0).should.equal(-1);
+    })
+  })
+})
+</code></pre>
+					</section>
+					<section>
+						<h2>Mocha</h2>
+						<pre><code class="javascript">describe('User', function(){
+  describe('#save()', function(){
+    it('should save without error', function(done){
+      var user = new User('Luna');
+      user.save(function(err){
+        if (err) throw err;
+        done();
+      });
+    })
+  })
+})
+</code></pre>
+					</section>
+
+					<section>
+						<h2>Mocha</h2>
+						<p>Hooks: before(), after(), beforeEach(), afterEach() </p>
+						<pre><code class="javascript">beforeEach(function(done){
+db.clear(function(err){
+  if (err) return done(err);
+    db.save([tobi, loki, jane], done);
+  });
+})</code></pre>
+					</section>
+
+					<section>
+						<h2>Mocha</h2>
+						<img src="img/Screen Shot 2012-03-01 at 2.31.31 PM.png" alt="">
+					</section>
+
+					<section>
+						<h2>Mocha</h2>
+						<p>Console reporter</p>
+						<img src="img/reporter-spec-duration.png" alt="">
+					</section>
+
+					<section>
+						<h2>Mocha</h2>
+						<p>HTML reporter</p>
+						<img src="img/reporter-html.png" alt="">
+					</section>
+
+					<section>
+						<h2>Mocha</h2>
+						<p>Nyan reporter</p>
+						<img src="img/Screen Shot 2012-08-22 at 3.59.08 PM.png" alt="">
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Chai</h2>
+						<img src="img/chai-logo-small.png" alt="">
+					</section>
+
+					<section>
+						<h2>Chai</h2>
+						<p>Assert, expect/should</p>
+							<pre><code class="javascript">chai.should();
+foo.should.be.a('string');
+foo.should.equal('bar');
+foo.should.have.length(3);
+tea.should.have.property('flavors')
+  .with.length(3);</code></pre>
+					</section>
+
+					<section data-background="gold" style="color:black;">
+						<h1>Question Time!</h1>
+						<p>How would you test an RNG?</p>
+					</section>
+
+					<section>
+						<h2>Chai</h2>
+						<p>Plugins</p>
+						<a href="http://chaijs.com/plugins/">here</a>
+					</section>
+
 				</section>
 
 				<section>
 					<section>
 						<h2>Jasmine</h2>
-						
 					</section>
 					<section>
 						<p>What is it?..</p>
@@ -162,38 +348,59 @@ expect({ foo: <span class="string">'baz'</span> })
 				</section>
 
 				<section>
-					<h2>Techniques</h2>
-
-				</section>
-
-				<section>
 					<h2>jsTestDriver</h2>
 					<p> <font class="blue">java -jar</font> <font class="orange">JsTestDriver.jar</font> <font class="green">--port 9876</font></p>
 				</section>
 
 				<section>
-					<h2>CasperJS</h2>
-					<p>API</p>
-					<p>PhantomJS</p>
-					<p>SlimerJS</p>
+					<section>
+						<h2>CasperJS</h2>
+						<p><a href="http://phantomjs.org/">PhantomJS</a></p>
+						<p><a href="http://docs.casperjs.org/en/latest/quickstart.html#a-minimal-scraping-script">API</a></p>
+						<p><a href="http://slimerjs.org/">SlimerJS</a></p>
+						<p><a href="https://github.com/WaterfallEngineering/SpookyJS">SpookyJS</a></p>
+					</section>
+					<section>
+						<h2>CasperJS</h2>
+						<ul>
+							<li>Unit testing</li>
+							<li>Functional testing</li>
+							<li>Events and DOM integration</li>
+							<li>Screenshot capture</li>
+						</ul>
+					</section>
 				</section>
 
 				<section>
-					<h2>Karma</h2>
-				</section>
-
-				<section>
-					<h2>Code Coverage</h2>
-					<p>Q: What happens when project code is not covered?</p>
-					<ul>
-						<li>post-green refactoring</li>
-						<li>instrumentation + illustration</li>
-						<li>code health metric</li>
-					</ul>
+					<section>
+						<h2>Code Coverage</h2>
+					</section>
+					<section data-background="gold" style="color:black;">
+						<h1>Question Time!</h1>
+						<p>What happens when project code is not covered?</p>
+					</section>
+					<section>
+						<h2>Code Coverage</h2>
+						<ul>
+							<li>Because of: post-green refactoring</li>
+							<li>Essentially is: instrumentation</li>
+							<li>Also acts as: code health metric</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Post-green refactoring</h2>
+						<img src="img/WP_20130803_005.jpg" alt="">
+					</section>
 				</section>
 
 				<section>
 					<h2>Istanbul</h2>
+					<ul>
+						<li>Statement, branch, and function coverage</li>
+						<li>Test running tools</li>
+						<li>HTML &amp; LCOV reporting</li>
+						<li>esprima-based</li>
+					</ul>
 				</section>
 
 				<section>
@@ -201,6 +408,7 @@ expect({ foo: <span class="string">'baz'</span> })
 					<ul>
 						<li>fail builds</li>
 						<li>statistics &amp; reporting</li>
+						<li>Github is integration paradise</li>
 					</ul>
 				</section>
 
@@ -215,14 +423,29 @@ expect({ foo: <span class="string">'baz'</span> })
 
 				<section>
 					<h2>Mutation testing</h2>
+					<ul>
+						<li>Who tests tests?</li>
+						<li>Coverage is paramount! (it isn't)</li>
+						<li>Mutations: remove lines, alter operators, rename identifiers</li>
+						<li>The Future of Unit Testing</li>
+					</ul>
+				</section>
+
+				<section data-background="gold" style="color:black;">
+					<h1>Question Time!</h1>
+					<p>What do you do when you're offerred a project without TDD?</p>
+				</section>
+
+				<section>
+					<h1>you run <em>like hell</em></h1>
+					<img src="img/run-jack-sparrow-run.jpg" alt="">
 				</section>
 
 				<section>
 					<h2>
-						the end	
+						the end
 					</h2>
 				</section>
-
 			</div>
 
 		</div>
