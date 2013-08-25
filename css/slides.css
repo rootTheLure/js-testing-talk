@@ -19,3 +19,9 @@ section font.yellow {
 section font.orange {
 	color: #FC3;
 }
+
+section img.nodecorations {
+	border: none;
+	background: none;
+	box-shadow: none;
+}

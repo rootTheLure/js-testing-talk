@@ -40,7 +40,7 @@
 				<section>
 					<h2>The Art of Testing JavaScript Applications</h2>
 					<p>
-						<small>by Alexander Gerasimov and Dmitrey Gerasimov</small>
+						<small><font class="blue">by Alexander Gerasimov and Dmitrey Gerasimov</font></small>
 					</p>
 				</section>
 
@@ -125,17 +125,17 @@
 				</section>
 
 				<section>
+					<section>
 						<h2>BDD specs</h2>
 						<ul>
 							<li>given-when-then</li>
 							<li>expect</li>
 							<li>should</li>
 						</ul>
-				</section>
-
-				<section>
-					<h2>given-when-then</h2>
-					<pre><font class="bold blue">Story</font>: Returns go to stock
+					</section>
+					<section>
+						<h2>given-when-then</h2>
+						<pre><font class="bold blue">Story</font>: Returns go to stock
 <font class="bold blue">In order to</font> keep track of stock
 <font class="bold blue">As a</font> store owner
 <font class="bold blue" >I want to</font> add items back to stock when they're returned
@@ -145,18 +145,38 @@
 <font class="bold orange">And</font> I currently have three black sweaters left in stock
 <font class="bold yellow">When</font> he returns the sweater for a refund
 <font class="bold green">Then</font> I should have four black sweaters in stock</pre>
+					</section>
+					<section>
+						<h2>Tools</h2>
+						<ul>
+							<li><a href="http://cukes.info/">Cucumber</a></li>
+							<li><a href="http://www.specflow.org/specflownew/">Specflow</a></li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>expect</h2>
+						<pre><code>var expect = require("chai").expect
+  , foo = "bar"
+  , beverages = { tea: [ "chai", "matcha", "oolong" ] };
+
+expect(foo).to.be.a("string");
+expect(foo).to.equal("bar");
+expect(foo).to.have.length(3);
+expect(beverages).to.have.property("tea").with.length(3);</code></pre>
+					</section>
+					<section>
+						<h2>should</h2>
+						<pre><code>var should = require("chai").should()
+  , foo = "bar"
+  , beverages = { tea: [ "chai", "matcha", "oolong" ] };
+
+foo.should.be.a("string");
+foo.should.equal("bar");
+foo.should.have.length(3);
+beverages.should.have.property("tea").with.length(3);</code></pre>
+					</section>
 				</section>
-
-				<section>
-					<h2>expect</h2>
-					<pre><code>expect(foo).to.not.equal(<span class="string">'bar'</span>);
-expect(goodFn).to.not.<span class="keyword">throw</span>(Error);
-
-expect({ foo: <span class="string">'baz'</span> })
-	.to.have.property(<span class="string">'foo'</span>)
-  	.and.not.equal(<span class="string">'bar'</span>);</code></pre>
-				</section>
-
 				<section>
 					<section>
 						<h2>Functional</h2>
@@ -219,7 +239,138 @@ expect({ foo: <span class="string">'baz'</span> })
 						<li>Fixtures</li>
 					</ul>
 				</section>
+				<section>
+					<section>
+						<h2>Jasmine</h2>
+						<img class='nodecorations' src="./img/flower.png"/>
+					</section>
+					<section>
+						<p>What is it?..</p>
+						<img class='nodecorations' src="./img/pr.png"/>
+					</section>
+					<section>
+						<h2>Jasmine</h2>
+						<p><font class="bold green">Suits &amp; specs</font></p>
+						<pre><code>describe("A suite is just a function", function() {
+  var a;
 
+  it("and so is a spec", function() {
+    a = true;
+
+    expect(a).toBe(true);
+  });
+});
+						</code></pre>						
+					</section>
+					<section>
+						<h2>Jasmine</h2>
+						<p><font class="bold green">Matchers</font></p>
+						<pre><code>expect(x).toEqual(y);
+expect(x).toBe(y);
+expect(x).toMatch(pattern); 
+expect(x).toBeDefined(); 
+expect(x).toBeUndefined(); 
+expect(x).toBeNull(); 
+expect(x).toBeTruthy(); 
+expect(x).toBeFalsy();
+expect(x).toContain(y);
+expect(x).toBeLessThan(y); 
+expect(x).toBeGreaterThan(y);
+expect(function(){fn();}).toThrow(e);</code></pre>
+					</section>
+					<section>
+						<h2>Jasmine</h2>
+						<p><font class="bold blue">Spies</font></p>
+						<img class='nodecorations' src="./img/spy.png"/>
+					</section>
+					<section>
+						<h2>Spies</h2>
+						<p><font class="bold orange">Tracks</font></p>
+							<ul>
+								<li>Functions calls</li>
+								<li>Arguments</li>
+								<li>Number of calls</li>
+							</ul>
+					</section>
+					<section>
+						<h2>Spies</h2>
+						<p><font class="bold orange">Access</font></p>
+							<ul>
+								<li>All calls of function</li>
+								<li>Every argument of every call</li>
+							</ul>
+					</section>
+					<section>
+						<h2>Spies</h2>
+						<p><font class="bold orange">Can</font></p>
+							<ul>
+								<li>Track and delegate</li>
+								<li>Substitute returning values</li>
+								<li>Call faked functions</li>
+								<li>Create mock objects</li>
+							</ul>
+					</section>
+
+					<section>
+						<h2>Jasmine</h2>
+						<p><font class="bold green">Any</font></p>
+						<pre><code>describe("jasmine.any", function() {
+  it("matches any value", function() {
+    expect({}).toEqual(jasmine.any(Object));
+    expect(12).toEqual(jasmine.any(Number));
+  });
+});</code></pre>
+					</section>
+					<section>
+						<h2>Jasmine</h2>
+						<p><font class="bold green">Clock</font></p>
+						<pre><code>beforeEach(function() {
+    timerCallback = jasmine.createSpy("timerCallback");
+    jasmine.Clock.useMock();
+});
+
+it("causes a timeout to be called synchronously", function() {
+    setTimeout(function() {
+      timerCallback();
+    }, 100);
+
+    expect(timerCallback).not.toHaveBeenCalled();
+    jasmine.Clock.tick(101);
+    expect(timerCallback).toHaveBeenCalled();
+});</code></pre>
+					</section>
+					<section>
+						<h2>Jasmine</h2>
+						<p><font class="bold green">Async</font></p>
+						<pre><code>describe("Asynchronous specs", function() {
+  it("should support async execution", function() {
+	runs(function() {
+	      flag = false;
+	      value = 0;
+
+	      setTimeout(function() {
+	        flag = true;
+	      }, 500);
+	});
+	waitsFor(function() {
+	      value++;
+	      return flag;
+	    }, "The Value should be incremented", 750);
+	runs(function() {
+	      expect(value).toBeGreaterThan(0);
+	    });
+	});
+});</code></pre>
+					</section>
+					<section>
+						<pre><code>describe("Jasmine", function() {
+  it("makes testing JavaScript awesome!", function() {
+    expect (yourCode).toBeLotsBetter();
+  });
+});
+</code></pre>
+					</section>
+				</section>
 				<section>
 					<section><h2>Mocha</h2><p>['mɔkə]</p></section>
 					<section>
@@ -297,7 +448,7 @@ db.clear(function(err){
 				<section>
 					<section>
 						<h2>Chai</h2>
-						<img src="img/chai-logo-small.png" alt="">
+						<img class='nodecorations' src="img/chai-logo-small.png" alt="">
 					</section>
 
 					<section>
@@ -322,34 +473,6 @@ tea.should.have.property('flavors')
 						<a href="http://chaijs.com/plugins/">here</a>
 					</section>
 
-				</section>
-
-				<section>
-					<section>
-						<h2>Jasmine</h2>
-					</section>
-					<section>
-						<p>What is it?..</p>
-						<img src="./img/pr.png"/>
-					</section>
-					<section>
-						<p>This?..</p>
-						<img src="./img/flower.png"/>
-					</section>
-					<section>
-						<h2>No! This</h2>
-						<pre><code>describe("Jasmine", function() {
-  it("makes testing JavaScript awesome!", function() {
-    expect (yourCode).toBeLotsBetter();
-  });
-});
-</code></pre>
-					</section>
-				</section>
-
-				<section>
-					<h2>jsTestDriver</h2>
-					<p> <font class="blue">java -jar</font> <font class="orange">JsTestDriver.jar</font> <font class="green">--port 9876</font></p>
 				</section>
 
 				<section>
