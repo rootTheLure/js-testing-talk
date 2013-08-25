@@ -1,0 +1,22 @@
+¿POR QUÉ? - зачем писать тесты [перед кодом] (агрессивный вопрос) 0.5мин
+¡PORQUE! - причины и мотивация 2мин
+TDD & BDD - 2мин
+TDD assertions - 2мин (один пример с chaijs.com)
+BDD slides - TDD --> BDD, BDD style, full BDD 5мин 
+EXPECT&SHOULD -> 2мин
+FUNCTIONAL 3 мин
+  AUTOMATION & CONTROL -> theLure
+
+TOOLS & EXAMPLES озвучить список 0.5мин
+TECHNIQUES 2мин
+JASMINE 9мин
+MOCHA 3мин
+CHAI 2мин
+CASPERJS 2мин
+ISTANBUL 1 мин
+TESTING + CI = ❤ 2 мин
+IRL, 100% COVERAGE IS A LIE & MUTATION TESTING  2 мин
+
+
+
+
