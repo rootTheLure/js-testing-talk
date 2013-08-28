@@ -4,6 +4,10 @@ section font.bold {
 	font-weight: bold;
 }
 
+section font.italic {
+	font-style: italic;
+}
+
 section font.blue {
 	color: #0Cf;
 }
@@ -24,4 +28,8 @@ section img.nodecorations {
 	border: none;
 	background: none;
 	box-shadow: none;
+}
+
+section pre code.javascript {
+	font-size: 26px;
 }

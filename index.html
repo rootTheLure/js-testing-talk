@@ -126,12 +126,8 @@
 
 				<section>
 					<section>
-						<h2>BDD specs</h2>
-						<ul>
-							<li>given-when-then</li>
-							<li>expect</li>
-							<li>should</li>
-						</ul>
+						<h2>BDD</h2>
+						<p><font class="blue">Behavior-driven development</font></p>
 					</section>
 					<section>
 						<h2>given-when-then</h2>
@@ -147,13 +143,26 @@
 <font class="bold green">Then</font> I should have four black sweaters in stock</pre>
 					</section>
 					<section>
-						<h2>Tools</h2>
-						<ul>
-							<li><a href="http://cukes.info/">Cucumber</a></li>
-							<li><a href="http://www.specflow.org/specflownew/">Specflow</a></li>
-						</ul>
-					</section>
+						<h2>Cucumber</h2>
+						<pre><font class="bold blue">Feature:</font> <font class="green italic">Addition</font>
+  <font class="bold blue">In order</font> <font class="green italic">to avoid silly mistakes</font>
+  <font class="bold blue">As</font> <font class="green italic">a math idiot</font>
+  <font class="bold blue">I want</font> <font class="green italic">to be told the sum of two number</font>
 
+<font class="bold blue">Scenario:</font> <font class="green italic">Add two numbers</font>
+  <font class="bold blue">Given</font> I have entered 50 into the calculator
+  <font class="bold blue">And</font> I have entered 70 into the calculator
+  <font class="bold blue">When</font> I press add
+  <font class="bold blue">Then</font> the result should be 120 on the screen</pre>
+					</section>
+					<section>
+						<h2>Cucumber</h2>
+						<pre style="font-size: 26px">
+  <font class="bold blue">Given</font> /I have entered (.<font class="bold blue">*</font>) into the calculator <font class="bold blue">do</font>
+  	calculator = new Calculator();
+  	calculator.push(n);
+  <font class="bold blue">end</font></pre>
+					</section>
 					<section>
 						<h2>expect</h2>
 						<pre><code>var expect = require("chai").expect
@@ -250,7 +259,7 @@ beverages.should.have.property("tea").with.length(3);</code></pre>
 					</section>
 					<section>
 						<h2>Jasmine</h2>
-						<p><font class="bold green">Suits &amp; specs</font></p>
+						<p><font class="bold green">Suites &amp; specs</font></p>
 						<pre><code>describe("A suite is just a function", function() {
   var a;
 
@@ -314,19 +323,19 @@ expect(function(){fn();}).toThrow(e);</code></pre>
 					<section>
 						<h2>Jasmine</h2>
 						<p><font class="bold green">Any</font></p>
-						<pre><code>describe("jasmine.any", function() {
+						<pre><code class="javascript">describe("jasmine.any", function() {
   it("matches any value", function() {
     expect({}).toEqual(jasmine.any(Object));
     expect(12).toEqual(jasmine.any(Number));
   });
-});</code></pre>
+});</code></font></pre>
 					</section>
 					<section>
 						<h2>Jasmine</h2>
 						<p><font class="bold green">Clock</font></p>
 						<pre><code>beforeEach(function() {
-    timerCallback = jasmine.createSpy("timerCallback");
-    jasmine.Clock.useMock();
+    timerCallback = jasmine.createSpy("timerCallback"); //create spy
+    jasmine.Clock.useMock(); //use wrepper of system timer
 });
 
 it("causes a timeout to be called synchronously", function() {
@@ -335,32 +344,19 @@ it("causes a timeout to be called synchronously", function() {
     }, 100);
 
     expect(timerCallback).not.toHaveBeenCalled();
-    jasmine.Clock.tick(101);
+    jasmine.Clock.tick(101); //make time to go
     expect(timerCallback).toHaveBeenCalled();
 });</code></pre>
 					</section>
 					<section>
 						<h2>Jasmine</h2>
 						<p><font class="bold green">Async</font></p>
-						<pre><code>describe("Asynchronous specs", function() {
-  it("should support async execution", function() {
-	runs(function() {
-	      flag = false;
-	      value = 0;
-
-	      setTimeout(function() {
-	        flag = true;
-	      }, 500);
-	});
-	waitsFor(function() {
-	      value++;
-	      return flag;
-	    }, "The Value should be incremented", 750);
-	runs(function() {
-	      expect(value).toBeGreaterThan(0);
-	    });
-	});
-});</code></pre>
+						<p>It exists, but...</p>
+					</section>
+					<section>
+						<h2>Jasmine</h2>
+						<p><font class="bold green">Reporter</font></p>
+						<img src="./img/jasmine-spec-runner.png" alt="">
 					</section>
 					<section>
 						<pre><code>describe("Jasmine", function() {
