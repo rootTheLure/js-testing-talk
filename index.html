@@ -116,12 +116,14 @@
 
 				<section>
 					<h2>TDD assertions</h2>
-					<ul>
-						<li><a href="https://npmjs.org/package/assert">assert</a></li>
-						<li><a href="https://npmjs.org/package/assert-plus">assert-plus</a></li>
-						<li><a href="https://npmjs.org/package/better-assert">better-assert</a></li>
-						<li><a href="http://chaijs.com/api/assert/">Chai.js Asserts</a></li>
-					</ul>
+						<pre><code class="javascript" data-trim>
+var assert = chai.assert;
+assert.typeOf(foo, 'string');
+assert.equal(foo, 'bar');
+assert.lengthOf(foo, 3)
+assert.property(tea, 'favors');
+assert.lengthOf(tea.flavors, 3);
+						</code></pre>
 				</section>
 
 				<section>
@@ -260,21 +262,21 @@ beverages.should.have.property("tea").with.length(3);</code></pre>
     expect(a).toBe(true);
   });
 });
-						</code></pre>						
+						</code></pre>
 					</section>
 					<section>
 						<h2>Jasmine</h2>
 						<p><font class="bold green">Matchers</font></p>
 						<pre><code>expect(x).toEqual(y);
 expect(x).toBe(y);
-expect(x).toMatch(pattern); 
-expect(x).toBeDefined(); 
-expect(x).toBeUndefined(); 
-expect(x).toBeNull(); 
-expect(x).toBeTruthy(); 
+expect(x).toMatch(pattern);
+expect(x).toBeDefined();
+expect(x).toBeUndefined();
+expect(x).toBeNull();
+expect(x).toBeTruthy();
 expect(x).toBeFalsy();
 expect(x).toContain(y);
-expect(x).toBeLessThan(y); 
+expect(x).toBeLessThan(y);
 expect(x).toBeGreaterThan(y);
 expect(function(){fn();}).toThrow(e);</code></pre>
 					</section>
