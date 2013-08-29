@@ -92,7 +92,7 @@
 					<section>
 						<h2>red/green/refactor</h2>
 						<p>Refactor: Eliminate redundancy</p>
-						<img src="img/beer.jpeg" alt="">
+						<img src="img/beer_toast.jpg" alt="">
 					</section>
 
 					<section>
@@ -477,12 +477,15 @@ tea.should.have.property('flavors')
 					</section>
 					<section>
 						<h2>CasperJS</h2>
-						<ul>
-							<li>Unit testing</li>
-							<li>Functional testing</li>
-							<li>Events and DOM integration</li>
-							<li>Screenshot capture</li>
-						</ul>
+<pre><code class="javascript">var casper = require('casper').create();
+
+casper.start('http://domain.tld/page.html', function() {
+    if (this.exists('h1.page-title')) {
+        this.echo('the heading exists');
+    }
+});
+
+casper.run();</code></pre>
 					</section>
 				</section>
 
