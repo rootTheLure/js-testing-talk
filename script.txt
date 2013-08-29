@@ -40,3 +40,4 @@ IRL, 100% COVERAGE IS A LIE & MUTATION TESTING  2 мин
 21. Bad guy into POST-GREEN REFACTORING
 22. Code Coverage Istanbul picture
 23. Github screenshot 
+24. X-men pic
