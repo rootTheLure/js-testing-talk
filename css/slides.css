@@ -29,3 +29,7 @@ section img.nodecorations {
 	background: none;
 	box-shadow: none;
 }
+
+section img {
+    max-height: 75%!important;
+}
