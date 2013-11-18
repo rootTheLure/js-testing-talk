@@ -30,6 +30,10 @@ section img.nodecorations {
 	box-shadow: none;
 }
 
+section img.logo {
+	margin: 0;
+}
+
 section img {
     max-height: 75%!important;
 }

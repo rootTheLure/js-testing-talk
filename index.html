@@ -67,7 +67,8 @@
 
 				<section>
 					<section>
-						<h2>TDD &amp; BDD</h2>
+						<h2>TDD</h2>
+						<p><font class="blue">Test-driven development</font></p>
 					</section>
 
 					<section>
@@ -103,29 +104,36 @@
 						</ul>
 						<a style="font-size:20px">http://en.wikipedia.org/wiki/Test-driven_development#Test_structure</a>
 					</section>
-
 				</section>
-
-				<section>
-					<h2>TDD assertions</h2>
-						<pre><code class="javascript" data-trim>
-var assert = chai.assert;
-assert.typeOf(foo, 'string');
-assert.equal(foo, 'bar');
-assert.lengthOf(foo, 3)
-assert.property(tea, 'favors');
-assert.lengthOf(tea.flavors, 3);
-						</code></pre>
-				</section>
-
 				<section>
 					<section>
 						<h2>BDD</h2>
 						<p><font class="blue">Behavior-driven development</font></p>
 					</section>
 					<section>
+						<h2>BDD</h2>
+						<p style="font-size: 26px"><font class="blue">"Delivering software that matters"</font></p>
+						<ul >
+							<li>Where to start in the process?</li>
+							<li>What to test and what not to test?</li>
+							<li>How much to test in one go?</li>
+							<li>What to call the tests?</li>
+							<li>How to understand why a test fails?</li>
+						</ul>
+					</section>
+					<section>
+						<h2>BDD</h2>
+						<p style="font-size: 26px"><font class="blue">"From the heavens to the depths"</font></p>
+						<pre style="font-size: 26px"><font class="bold blue">User story:</font>
+   As a <font class="bold green">[role]</font> I want <font class="bold green">[feature]</font> so that <font class="bold green">[benefit].</font>
+<font class="bold blue">Acceptance criteria:</font>
+   Given <font class="bold green">[initial context]</font>.
+   When <font class="bold green">[event occurs]</font>.
+   Then <font class="bold green">[ensure some outcomes]</font>.</pre>
+					</section>
+					<section>
 						<h2>given-when-then</h2>
-						<pre><font class="bold blue">Story</font>: Returns go to stock
+						<pre style="font-size: 26px"><font class="bold blue">Story</font>: Returns go to stock
 <font class="bold blue">In order to</font> keep track of stock
 <font class="bold blue">As a</font> store owner
 <font class="bold blue" >I want to</font> add items back to stock when they're returned
@@ -137,7 +145,7 @@ assert.lengthOf(tea.flavors, 3);
 <font class="bold green">Then</font> I should have four black sweaters in stock</pre>
 					</section>
 					<section>
-						<h2>Cucumber</h2>
+						<h2>Cucumber <img class="nodecorations logo" src="img/cuke_logo.png"></h2>
 						<pre><font class="bold blue">Feature:</font> <font class="green italic">Addition</font>
   <font class="bold blue">In order</font> <font class="green italic">to avoid silly mistakes</font>
   <font class="bold blue">As</font> <font class="green italic">a math idiot</font>
@@ -148,37 +156,16 @@ assert.lengthOf(tea.flavors, 3);
   <font class="bold blue">And</font> I have entered 70 into the calculator
   <font class="bold blue">When</font> I press add
   <font class="bold blue">Then</font> the result should be 120 on the screen</pre>
-					</section>
+  					</section>
 					<section>
-						<h2>Cucumber</h2>
+						<h2>Cucumber <img class="nodecorations logo" src="img/cuke_logo.png"></h2>
 						<pre style="font-size: 26px">
   <font class="bold blue">Given</font> /I have entered (.<font class="bold blue">*</font>) into the calculator <font class="bold blue">do</font>
-  	calculator = new Calculator();
-  	calculator.push(n);
+  	calculator = Calculator.new;
+  	calculator.push(n.to_i);
   <font class="bold blue">end</font></pre>
 					</section>
-					<section>
-						<h2>expect</h2>
-						<pre><code>var expect = require("chai").expect
-  , foo = "bar"
-  , beverages = { tea: [ "chai", "matcha", "oolong" ] };
 
-expect(foo).to.be.a("string");
-expect(foo).to.equal("bar");
-expect(foo).to.have.length(3);
-expect(beverages).to.have.property("tea").with.length(3);</code></pre>
-					</section>
-					<section>
-						<h2>should</h2>
-						<pre><code>var should = require("chai").should()
-  , foo = "bar"
-  , beverages = { tea: [ "chai", "matcha", "oolong" ] };
-
-foo.should.be.a("string");
-foo.should.equal("bar");
-foo.should.have.length(3);
-beverages.should.have.property("tea").with.length(3);</code></pre>
-					</section>
 				</section>
 				<section>
 					<section>
@@ -187,12 +174,12 @@ beverages.should.have.property("tea").with.length(3);</code></pre>
 
 					<section>
 						<h2>UX/behavior verification</h2>
-						<p>Unit tests just prove that your code doesn't work</p>
+						<p><font class="blue">Unit tests just prove that your code doesn't work</font></p>
 					</section>
 
 					<section>
 						<h2>Automation &amp; Control</h2>
-						<img src="img/user-friendly_dog.jpg" alt="">
+						<img src="img/user-friendly_dog.jpg" alt="" style="max-height:50%!important">
 						<div style="font-size:60px">&darr;</div>
 						<img src="img/text-x-javascript-icon.png" width="15%" alt="">
 					</section>
@@ -249,6 +236,21 @@ beverages.should.have.property("tea").with.length(3);</code></pre>
 					<section>
 						<h2>Fixtures</h2>
 						<img class='nodecorations' src="./img/fixture.png"/>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Tests</h2>
+						<p><font class="blue" style="font-size: 26px">Make <del>code</del> life better.</font></p>
+					</section>
+					<section>
+						<h2>Our sponsors for today</h2>
+						<ul>
+							<li>Jasmine</li>
+							<li>Mocha ['mɔkə]</li>
+							<li>Chai</li>
+							<li>Sinon</li>
+						</ul>
 					</section>
 				</section>
 				<section>
