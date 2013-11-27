@@ -255,47 +255,92 @@
 					<section>
 						<h2>Suites &amp; Specs</h2>
 						<p><font class="blue" style="font-size: 26px">Not suits</font></p>
-						<pre><code>// Suite
-describe("&lt;Unit or class name here&gt;", function() {
-  // Some variables for test suit
+						<pre><code class="javascript">// Suite
+describe("&lt;unit or class name here&gt;", function() {
+  // Some variables and hooks* for test suite
 
-  // Spec (your test)
-  it("#&lt;Method or test item name name here&gt", function() {
-    a = true;
-
-    expect(a).toBe(true);
+  describe("#&lt;method or test item name here&gt", function() {
+    // Spec (your test)
+    it("&lt;behavior and result here&gt;", function() {
+      /*
+      Initalization
+      Actions
+      Assertion
+      */
+    });
   });
-});
-						</code></pre>
+});</code></pre>
+					</section>
+					<section>
+						<h2>common test</h2>
+						<pre><code class="javascript">describe('Array', function(){
+  describe('#indexOf()', function(){
+    it('should return -1 when the value is not present', function(){
+      [1,2,3].indexOf(5).should.equal(-1);
+      [1,2,3].indexOf(0).should.equal(-1);
+    })
+  })
+})</code></pre>
+					</section>
+					<section>
+						<h2>Assertions</h2>
+						<p><font class="blue" style="font-size: 26px">What? Where? How many?</font></p>
+					</section>
+					<section>
+						<h2>assert</h2>
+						<p><font class="blue" style="font-size: 26px">Classic</font></p>
+						<pre><code class="javascript">var assert = chai.assert;
+
+assert.typeOf(foo, 'string');
+assert.equal(foo, 'bar');
+assert.lengthOf(foo, 3)
+assert.property(tea, 'flavors');
+assert.lengthOf(tea.flavors, 3);</code></pre>
+					</section>
+					<section>
+						<h2>expect</h2>
+						<p><font class="blue" style="font-size: 26px">BDD like</font></p>
+						<pre><code class="javascript">var expect = chai.expect;
+
+expect(foo).to.be.a('string');
+expect(foo).to.equal('bar');
+expect(foo).to.have.length(3);
+expect(tea).to.have.property('flavors').with.length(3);</code></pre>
+					</section>
+					<section>
+						<h2>should</h2>
+						<p><font class="blue" style="font-size: 26px">more BDD</font></p>
+						<pre><code class="javascript">chai.should();
+
+foo.should.be.a('string');
+foo.should.equal('bar');
+foo.should.have.length(3);
+tea.should.have.property('flavors').with.length(3);</code></pre>
+					</section>
+					<section>
+						<h2>Hooks</h2>
+						<p><font class="blue" style="font-size: 26px">before(), after(), beforeEach(), afterEach()</font></p>
+						<pre><code class="javascript">beforeEach(function(done){
+db.clear(function(err){
+  if (err) return done(err);
+    db.save([tobi, loki, jane], done);
+  });
+})</code></pre>
 					</section>
 				</section>
 				<section>
-					<section>
-						<h2>Jasmine</h2>
-						<img class='nodecorations' src="./img/flower.png"/>
-					</section>
-					<section>
-						<p>What is it?..</p>
-						<img class='nodecorations' src="./img/pr.png"/>
-					</section>
-					<section>
-						<h2>Jasmine</h2>
-						<p><font class="bold green">Suites &amp; specs</font></p>
-						<pre><code>describe("A suite is just a function", function() {
-  var a;
-
-  it("and so is a spec", function() {
-    a = true;
-
-    expect(a).toBe(true);
-  });
-});
-						</code></pre>
-					</section>
-					<section>
-						<h2>Jasmine</h2>
-						<p><font class="bold green">Matchers</font></p>
-						<pre><code>expect(x).toEqual(y);
+                    <section>
+                        <h2>Jasmine</h2>
+                        <img class='nodecorations' src="./img/flower.png"/>
+                    </section>
+                    <section>
+                        <p>What is it?..</p>
+                        <img class='nodecorations' src="./img/pr.png"/>
+                    </section>
+                    <section>
+                        <h2>Jasmine</h2>
+                        <p><font class="bold green">Matchers</font></p>
+                        <pre><code class="javascript">expect(x).toEqual(y);
 expect(x).toBe(y);
 expect(x).toMatch(pattern);
 expect(x).toBeDefined();
@@ -307,54 +352,35 @@ expect(x).toContain(y);
 expect(x).toBeLessThan(y);
 expect(x).toBeGreaterThan(y);
 expect(function(){fn();}).toThrow(e);</code></pre>
-					</section>
-					<section>
-						<h2>Jasmine</h2>
-						<p><font class="bold blue">Spies</font></p>
-						<img class='nodecorations' src="./img/spy.png"/>
-					</section>
-					<section>
-						<h2>Spies</h2>
-						<p><font class="bold orange">Tracks</font></p>
-							<ul>
-								<li>Functions calls</li>
-								<li>Arguments</li>
-								<li>Number of calls</li>
-							</ul>
-					</section>
-					<section>
-						<h2>Spies</h2>
-						<p><font class="bold orange">Access</font></p>
-							<ul>
-								<li>All calls of function</li>
-								<li>Every argument of every call</li>
-							</ul>
-					</section>
-					<section>
-						<h2>Spies</h2>
-						<p><font class="bold orange">Can</font></p>
-							<ul>
-								<li>Track and delegate</li>
-								<li>Substitute returning values</li>
-								<li>Call faked functions</li>
-								<li>Create mock objects</li>
-							</ul>
-					</section>
-
-					<section>
-						<h2>Jasmine</h2>
-						<p><font class="bold green">Any</font></p>
-						<pre><code class="javascript">describe("jasmine.any", function() {
+                    </section>
+                    <section>
+                        <h2>Jasmine</h2>
+                        <p><font class="bold green">Spies</font></p>
+                        <pre><code>spyOn(obj, 'method');
+expect(obj.method).toHaveBeenCalled();
+expect(obj.method).toHaveBeenCalledWith('foo', 'bar')
+obj.method.callCount
+obj.method.mostRecentCall.args
+obj.method.reset()
+spyOn(obj, 'method').andCallThrough()
+obj.method.argsForCall
+spyOn(obj, 'method').andReturn('Pow!')</code></pre>
+                    </section>
+                    <section>
+                        <h2>Jasmine</h2>
+                        <p><font class="bold green">Any</font></p>
+                        <pre><code class="javascript">describe("jasmine.any", function() {
   it("matches any value", function() {
     expect({}).toEqual(jasmine.any(Object));
     expect(12).toEqual(jasmine.any(Number));
   });
 });</code></font></pre>
-					</section>
-					<section>
-						<h2>Jasmine</h2>
-						<p><font class="bold green">Clock</font></p>
-						<pre><code>beforeEach(function() {
+						<p><font class="bold blue">EXAMPLE</font></p>
+                    </section>
+                    <section>
+                        <h2>Jasmine</h2>
+                        <p><font class="bold green">Clock</font></p>
+                        <pre><code class="javascript">beforeEach(function() {
     timerCallback = jasmine.createSpy("timerCallback"); //create spy
     jasmine.Clock.useMock(); //use wrepper of system timer
 });
@@ -368,129 +394,22 @@ it("causes a timeout to be called synchronously", function() {
     jasmine.Clock.tick(101); //make time to go
     expect(timerCallback).toHaveBeenCalled();
 });</code></pre>
-					</section>
-					<section>
-						<h2>Jasmine</h2>
-						<p><font class="bold green">Async</font></p>
-						<p>It exists, but...</p>
-					</section>
-					<section>
-						<h2>Jasmine</h2>
-						<p><font class="bold green">Reporter</font></p>
-						<img src="./img/jasmine-spec-runner.png" alt="">
-					</section>
-					<section>
-						<pre><code>describe("Jasmine", function() {
+                    </section>
+                    <section>
+                        <h2>Jasmine</h2>
+                        <p><font class="bold green">Reporter</font></p>
+                        <img src="./img/jasmine-spec-runner.png" alt="">
+                    </section>
+                    <section>
+                        <pre><code class="javascript">describe("Jasmine", function() {
   it("makes testing JavaScript awesome!", function() {
     expect (yourCode).toBeLotsBetter();
   });
 });
 </code></pre>
-					</section>
-				</section>
-				<section>
-					<section><h2>Mocha</h2><p>['mɔkə]</p></section>
-					<section>
-						<h2>Mocha</h2>
-						<ul>
-							<li>Supports TDD assertions and BDD should/expect</li>
-							<li>Reporting &amp; CI integration</li>
-							<li>JavaScript API</li>
-							<li>Browser Test Runner</li>
-						</ul>
-					</section>
-					<section>
-						<h2>Mocha</h2>
-						<pre><code class="javascript">describe('Array', function(){
-  describe('#indexOf()', function(){
-    it('should return -1 when the value is not present', function(){
-      [1,2,3].indexOf(5).should.equal(-1);
-      [1,2,3].indexOf(0).should.equal(-1);
-    })
-  })
-})
-</code></pre>
-					</section>
-					<section>
-						<h2>Mocha</h2>
-						<pre><code class="javascript">describe('User', function(){
-  describe('#save()', function(){
-    it('should save without error', function(done){
-      var user = new User('Luna');
-      user.save(function(err){
-        if (err) throw err;
-        done();
-      });
-    })
-  })
-})
-</code></pre>
-					</section>
+                    </section>
+                </section>
 
-					<section>
-						<h2>Mocha</h2>
-						<p>Hooks: before(), after(), beforeEach(), afterEach() </p>
-						<pre><code class="javascript">beforeEach(function(done){
-db.clear(function(err){
-  if (err) return done(err);
-    db.save([tobi, loki, jane], done);
-  });
-})</code></pre>
-					</section>
-
-					<section>
-						<h2>Mocha</h2>
-						<img src="img/Screen Shot 2012-03-01 at 2.31.31 PM.png" alt="">
-					</section>
-
-					<section>
-						<h2>Mocha</h2>
-						<p>Console reporter</p>
-						<img src="img/reporter-spec-duration.png" alt="">
-					</section>
-
-					<section>
-						<h2>Mocha</h2>
-						<p>HTML reporter</p>
-						<img src="img/reporter-html.png" alt="">
-					</section>
-
-					<section>
-						<h2>Mocha</h2>
-						<p>Nyan reporter</p>
-						<img src="img/Screen Shot 2012-08-22 at 3.59.08 PM.png" alt="">
-					</section>
-				</section>
-
-				<section>
-					<section>
-						<h2>Chai</h2>
-						<img class='nodecorations' src="img/chai-logo-small.png" alt="">
-					</section>
-
-					<section>
-						<h2>Chai</h2>
-						<p>Assert, expect/should</p>
-							<pre><code class="javascript">chai.should();
-foo.should.be.a('string');
-foo.should.equal('bar');
-foo.should.have.length(3);
-tea.should.have.property('flavors')
-  .with.length(3);</code></pre>
-					</section>
-
-					<section data-background="gold" style="color:black;">
-						<h1>Question Time!</h1>
-						<p>How would you test an RNG?</p>
-					</section>
-
-					<section>
-						<h2>Chai</h2>
-						<p>Plugins</p>
-						<a href="http://chaijs.com/plugins/">here</a>
-					</section>
-
-				</section>
 
 				<section>
 					<section>
