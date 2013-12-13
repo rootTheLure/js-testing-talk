@@ -8,7 +8,10 @@ describe("jasmine.any", function() {
       var calc = new Calculator();
       spyOn(calc, 'sum');
       calc.sum(1,2);
-      expect(calc.sum).toHaveBeenCalledWith(jasmine.any(Number), jasmine.any(Number));
+      expect(calc.sum).toHaveBeenCalledWith(
+        jasmine.any(Number),
+        jasmine.any(Number)
+      );
   });
 });
 
