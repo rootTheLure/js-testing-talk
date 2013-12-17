@@ -370,7 +370,7 @@ spyOn(obj, 'method').andReturn('Pow!')</code></pre>
                         <p><font class="bold green">Clock</font></p>
                         <pre><code class="javascript">beforeEach(function() {
     timerCallback = jasmine.createSpy("timerCallback"); //create spy
-    jasmine.Clock.useMock(); //use wrepper of system timer
+    jasmine.Clock.useMock(); //use wrapper of system timer
 });
 
 it("causes a timeout to be called synchronously", function() {
@@ -379,7 +379,7 @@ it("causes a timeout to be called synchronously", function() {
     }, 100);
 
     expect(timerCallback).not.toHaveBeenCalled();
-    jasmine.Clock.tick(101); //make time to go
+    jasmine.Clock.tick(101); //make time go
     expect(timerCallback).toHaveBeenCalled();
 });</code></pre>
                     </section>
