@@ -8,7 +8,11 @@ section font.italic {
 	font-style: italic;
 }
 
-section font.blue {
+.reveal small {
+	font-size: 0.9em;
+}
+
+.reveal .blue {
 	color: #0Cf;
 }
 
@@ -20,8 +24,8 @@ section font.yellow {
 	color: #FF3;
 }
 
-section font.orange {
-	color: #FC3;
+.reveal .orange {
+	color: #e7ad52;
 }
 
 section img.nodecorations {
@@ -35,5 +39,5 @@ section img.logo {
 }
 
 section img {
-    max-height: 75%!important;
+    max-height: 65vh!important;
 }
