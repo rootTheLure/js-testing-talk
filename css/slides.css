@@ -20,20 +20,25 @@ section font.yellow {
 	color: #FF3;
 }
 
-section font.orange {
-	color: #FC3;
+.reveal .orange {
+	color: #ffcd7d;
 }
 
-section img.nodecorations {
+.reveal .orange-dark {
+	color: #d2912c;
+}
+
+.reveal .nodecorations {
 	border: none;
 	background: none;
 	box-shadow: none;
 }
+.reveal section img {
+	max-height: 65vh;
+	max-width: 65vh;
+	margin: 0px;
+}
 
 section img.logo {
 	margin: 0;
-}
-
-section img {
-    max-height: 75%!important;
 }
